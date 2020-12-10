@@ -5,7 +5,7 @@ import os
 import sys
 
 reservadas = ['MODULE','SUB','END','MOD','IMPORTS','PROGRAM','MAIN','ARGS','AS','STRING',
-'CONSOLE','WRITELINE','VBCRLF','DIM','READLINE','DATETIME','NOW','READKEY','TRUE','FALSE'
+'CONSOLE','WRITELINE','VBCRLF','DIM','READLINE','DATETIME','NOW','READKEY','TRUE','FALSE','BOOLEAN'
 		]
 
 tokens = reservadas+['ID','NUMERO','SUMA','RESTA','DIV','MULTI','MENORQ','MAYORQ','IGUAL','NOIGUAL',
@@ -80,7 +80,7 @@ def buscarFicheros(directorio):
 
 	return files[int(numArchivo)-1]
 
-
+#Direccion de las pruebas
 direccion ='C:/Users/Marco/Documents/test/'
 archivi = buscarFicheros(direccion)
 prueba = direccion+archivi
