@@ -37,6 +37,9 @@ def p_args(p):
 def p_readline(p):
     'readline : CONSOLE PUNTO WRITELINE PIZQ ID PDER'
 
+def p_boolean(p):
+	'boolean : BOOLEAN'
+
 
 def p_import(p):
 	#'''block : constDecl varDecl procDecl statement'''
@@ -171,6 +174,22 @@ def p_expression4(p):
 def p_expression5(p):
 	'''expression : LLIZQ ID LLDER'''
 
+def p_expression6(p):
+	'''expression : VBCRLF'''
+#vbCrLf
+
+def p_expression7(p):
+	'''expression : MODULE PROGRAM'''
+
+def p_expression8(p):
+	'''expression : END MODULE'''
+
+def p_expression9(p):
+	'''expression : CONSOLE PUNTO READKEY PIZQ relation PDER'''
+
+def p_expression10(p):
+	'''expression : DIM id IGUAL CONSOLE PUNTO READLINE PIZQ PDER'''
+
 def p_addingOperator1(p):
 	'''addingOperator : SUMA'''
 	#print "addingOperator 1"
@@ -178,6 +197,9 @@ def p_addingOperator1(p):
 def p_addingOperator2(p):
 	'''addingOperator : RESTA'''
 	#print "addingOperator 1"
+
+def p_addingOperator3(p):
+	'''addingOperator : MOD'''
 
 def p_term1(p):
 	'''term : factor'''

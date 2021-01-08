@@ -52,47 +52,8 @@ def t_NUMERO(t):
 def t_error(t):	
 	t.lexer.skip(1)
 
-def buscarFicheros(directorio):
-	ficheros = []
-	numArchivo = ''
-	respuesta = False
-	cont = 1
 
-	for base, dirs,files in os.walk(directorio):
-		ficheros.append(files)
-
-	for file in files:
-		conteo = str(cont)
-		conteo += ". "
-		conteo += file
-		print (conteo)
-
-		cont = cont+1
-
-	while respuesta == False:
-		numArchivo = input("\nNumero del test: ")
-		for file in files:
-			if file == files[int(numArchivo)-1]:
-				respuesta = True
-				break
-
-	print ("Has escogido \"%s\" \n" %files[int(numArchivo)-1])
-
-	return files[int(numArchivo)-1]
-
-#Direccion de las pruebas
-direccion ='C:/Users/Marco/Documents/test/'
-archivi = buscarFicheros(direccion)
-prueba = direccion+archivi
-fp = codecs.open(prueba, "r", "utf-8")
-cadena = fp.read()
-fp.close()
 
 analizador = lex.lex()
 
-analizador.input(cadena)
-
-while True:
-	tok = analizador.token()
-	if not tok : break
-	print (tok)
+#analizador.input(cadena)
