@@ -25,11 +25,8 @@ precedence = (
 	#'PIZQ','PDER','LLIZQ','LLDER','PUNTO','UPDATE'
 	)
 
-def p_module(p):
-	'module : import'
-	#p[0] = module(p[1], "module")
-	#module = { Import } SS 
-    #print "program"
+#def p_module(p):
+#	'module : import'	
 
 def p_args(p):
     'args : ARGS'
@@ -43,7 +40,7 @@ def p_boolean(p):
 
 def p_import(p):
 	#'''block : constDecl varDecl procDecl statement'''
-	'import : IMPORTS "(" ident ")" ";" '
+	'import : IMPORTS "(" ident ")" ";" statement'
     #print "block"	
 
 def p_main(p):
@@ -51,7 +48,7 @@ def p_main(p):
 #Sub Main(args As String())
 
 def p_constDecl(p):
-	'''constDecl : DIM id IGUAL ID'''
+	'''constDecl : DIM id IGUAL id'''
 	#p[0] = constDecl(p[2])
 	#print "constDecl"
 
@@ -61,15 +58,15 @@ def p_constDeclEmpty(p):
 	#print "nulo"
 
 def p_constAssignmentList1(p):
-	'''constAssignmentList : ID ASSIGN NUMERO'''
+	'''constAssignmentList : ID IGUAL NUMERO'''
 	#print "constAssignmentList 1"
 
 def p_constAssignmentList2(p):
-	'''constAssignmentList : constAssignmentList COMMA ID ASSIGN NUMERO'''
+	'''constAssignmentList : constAssignmentList ID IGUAL NUMERO'''
 	#print "constAssignmentList 2"
 
 def p_varDecl1(p):
-	'''varDecl : VAR identList'''
+	'''varDecl : DIM identList'''
 	#print "varDecl 1"
 
 def p_varDeclEmpty(p):
@@ -97,19 +94,19 @@ def p_statement1(p):
 	#print "statement 1"
 
 def p_statement2(p):
-	'''statement : CALL ID'''
+	'''statement : ID'''
 	#print "statement 2"
 
 def p_statement3(p):
 	'''statement : BEGIN statementList END'''
 	#print "statement 3"
 
-def p_statement4(p):
-	'''statement : IF condition THEN statement'''
+#def p_statement4(p):
+	#'''statement : IF condition THEN statement'''
 	#print "statement 4"
 
-def p_statement5(p):
-	'''statement : WHILE condition DO statement'''
+#def p_statement5(p):
+#	'''statement : WHILE condition DO statement'''
 	#print "statement 5"
 
 def p_statementEmpty(p):
@@ -133,7 +130,7 @@ def p_condition2(p):
 	#print "condition 2"
 
 def p_relation1(p):
-	'''relation : ASSIGN'''
+	'''relation : IGUAL'''
 	#print "relation 1"
 
 def p_relation2(p):
