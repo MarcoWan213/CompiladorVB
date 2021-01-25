@@ -5,11 +5,11 @@ import os
 import sys
 
 reservadas = ['MODULE','SUB','END','MOD','IMPORTS','PROGRAM','MAIN','ARGS','AS','STRING',
-'CONSOLE','WRITELINE','VBCRLF','DIM','READLINE','DATETIME','NOW','READKEY','TRUE','FALSE','BOOLEAN', 'BEGIN'
+'CONSOLE','WRITELINE','VBCRLF','DIM','READLINE','DATETIME','NOW','READKEY','TRUE','FALSE', 'BEGIN'
 		]
 
 tokens = reservadas+['ID','NUMERO','SUMA','RESTA','DIV','MULTI','MENORQ','MAYORQ','IGUAL','NOIGUAL',
-'PIZQ','PDER','LLIZQ','LLDER','PUNTO','UPDATE'
+'PIZQ','PDER','LLIZQ','LLDER','PUNTO','UPDATE','BOOLEAN'
 		]
 
 t_ignore = '\t '
@@ -43,8 +43,12 @@ def t_COMMENT(t):
 	r'\'.*'
 	pass
 
+def t_BOOLEAN(t):
+	r'true|false'
+	pass
+
 def t_NUMERO(t):
-	r'\d+'
+	r'(\d+) | (\d+.\d+)'
 	t.value = int(t.value)
 	return t
 

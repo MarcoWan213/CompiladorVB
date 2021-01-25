@@ -107,15 +107,7 @@ def p_statement4(p):
 
 def p_statement5(p):
 	'statement : IMPORTS ID'
-	print ("statement 5")
-
-#def p_statement6(p):
-	#'statement : SUB MAIN PIZQ ARGS AS STRING PIZQ PDER PDER'
-	#print ("statement Main")
-
-#def p_statement5(p):
-#	'''statement : WHILE condition DO statement'''
-	#print "statement 5"
+	print ("statement Imports")
 
 def p_statementEmpty(p):
 	'''statement : empty'''
@@ -208,7 +200,7 @@ def p_expression8(p):
 
 def p_expression9(p):
 	'''expression : CONSOLE PUNTO READKEY PIZQ boolean PDER'''
-	print ("expresion 8")
+	print ("expresion READNKY")
 
 def p_expression10(p):
 	'''expression : DIM ID IGUAL CONSOLE PUNTO READLINE PIZQ PDER'''
@@ -216,7 +208,7 @@ def p_expression10(p):
 
 def p_expression11(p):
 	'''expression : CONSOLE PUNTO WRITELINE PIZQ ID PDER'''
-	print ("expresion 10")
+	print ("expresion WRITELINE")
 
 def p_expression12(p):
 	'''expression : DIM ID AS BOOLEAN IGUAL term'''
@@ -281,6 +273,10 @@ def p_factor2(p):
 def p_factor3(p):
 	'''factor : PIZQ expression PDER'''
 	print ("factor 3")
+	
+def p_factor4(p):
+	'''factor : PUNTO'''
+	print ("factor PUNTO")
 
 #def p_readline(p):
 #    'readline : CONSOLE PUNTO READLINE PIZQ id PDER'
