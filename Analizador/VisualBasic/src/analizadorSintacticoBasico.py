@@ -124,6 +124,10 @@ def p_statement5(p):
 	'statement : IMPORTS ID'
 	print ("statement 5")
 
+#def p_statement6(p):
+	#'statement : SUB MAIN PIZQ ARGS AS STRING PIZQ PDER PDER'
+	#print ("statement Main")
+
 #def p_statement5(p):
 #	'''statement : WHILE condition DO statement'''
 	#print "statement 5"
@@ -249,12 +253,12 @@ def p_addingOperator3(p):
 	'''addingOperator : MOD'''
 	print ("addingOperator MOD")
 
-def p_addingOperator4(p):
-	'''addingOperator : ID IGUAL NUMERO addingOperator NUMERO '''
-	print ("addingOperator suma linea aparte")
+#def p_addingOperator4(p):
+	#'''addingOperator : ID IGUAL NUMERO addingOperator NUMERO '''
+	#print ("addingOperator suma linea aparte")
 
 def p_term1(p):
-	'''term : factor  multiplyingOperator'''
+	'''term : factor'''
 	print ("term 1")
 
 def p_term2(p):
@@ -268,6 +272,10 @@ def p_term3(p):
 def p_term4(p):
 	'''term : BOOLEAN IGUAL term'''
 	print ("term 4 boolean")
+
+def p_term5(p):
+	'''term : term addingOperator factor'''
+	print ("term 5")
 
 def p_multiplyingOperator1(p):
 	'''multiplyingOperator : MULTI'''
@@ -283,7 +291,7 @@ def p_factor1(p):
 
 def p_factor2(p):
 	'''factor : NUMERO'''
-	print ("factor 2")
+	print ("factor NUMERO")
 
 def p_factor3(p):
 	'''factor : PIZQ expression PDER'''

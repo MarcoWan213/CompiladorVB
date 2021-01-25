@@ -33,7 +33,6 @@ def t_ID(t):
 	if t.value.upper() in reservadas:
 		t.value = t.value.upper()		
 		t.type = t.value
-
 	return t
 
 def t_newline(t):
