@@ -14,7 +14,7 @@ precedence = (
 	('left','MENORQ','MAYORQ'),
 	('left','SUMA','RESTA'),
 	('left','MULTI','DIV'),	
-	('right','PUNTO'),
+	#('right','PUNTO'),
 	('left','PIZQ','PDER'),
 	('left','LLIZQ','LLDER'),	
 	)
@@ -177,9 +177,9 @@ def p_expression14(p):
 	#'''expression : multiplyingOperator term'''
 	#print ("expresion 15")
 
-def p_expression4(p):
-	'''expression : DATETIME PUNTO NOW'''
-	print ("expresion 4")
+#def p_expression4(p):
+	#'''expression : DATETIME PUNTO NOW'''
+	#print ("expresion 4")
 
 def p_expression5(p):
 	'''expression : LLIZQ ID LLDER'''
@@ -198,17 +198,17 @@ def p_expression8(p):
 	'''expression : END MODULE'''
 	print ("EndMod")
 
-def p_expression9(p):
-	'''expression : CONSOLE PUNTO READKEY PIZQ boolean PDER'''
-	print ("expresion READNKY")
+#def p_expression9(p):
+	#'''expression : CONSOLE PUNTO READKEY PIZQ boolean PDER'''
+	#print ("expresion READNKY")
 
-def p_expression10(p):
-	'''expression : DIM ID IGUAL CONSOLE PUNTO READLINE PIZQ PDER'''
-	print ("expresion 9")
+#def p_expression10(p):
+	#'''expression : DIM ID IGUAL CONSOLE PUNTO READLINE PIZQ PDER'''
+	#print ("expresion 9")
 
-def p_expression11(p):
-	'''expression : CONSOLE PUNTO WRITELINE PIZQ ID PDER'''
-	print ("expresion WRITELINE")
+#def p_expression11(p):
+	#'''expression : CONSOLE PUNTO WRITELINE PIZQ ID PDER'''
+	#print ("expresion WRITELINE")
 
 def p_expression12(p):
 	'''expression : DIM ID AS BOOLEAN IGUAL term'''
@@ -274,9 +274,9 @@ def p_factor3(p):
 	'''factor : PIZQ expression PDER'''
 	print ("factor 3")
 	
-def p_factor4(p):
-	'''factor : PUNTO'''
-	print ("factor PUNTO")
+#def p_factor4(p):
+	#'''factor : PUNTO'''
+	#print ("factor PUNTO")
 
 #def p_readline(p):
 #    'readline : CONSOLE PUNTO READLINE PIZQ id PDER'

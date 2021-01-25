@@ -9,7 +9,7 @@ reservadas = ['MODULE','SUB','END','MOD','IMPORTS','PROGRAM','MAIN','ARGS','AS',
 		]
 
 tokens = reservadas+['ID','NUMERO','SUMA','RESTA','DIV','MULTI','MENORQ','MAYORQ','IGUAL','NOIGUAL',
-'PIZQ','PDER','LLIZQ','LLDER','PUNTO','UPDATE','BOOLEAN'
+'PIZQ','PDER','LLIZQ','LLDER','UPDATE','BOOLEAN'
 		]
 
 t_ignore = '\t '
@@ -22,7 +22,7 @@ t_MENORQ = r'<'
 t_MAYORQ = r'>'
 t_PIZQ = r'\('
 t_PDER = r'\)'
-t_PUNTO = r'\.'
+#t_PUNTO = r'\.'
 t_NOIGUAL = '~='
 t_LLIZQ = r'\{'
 t_LLDER = r'\}'
