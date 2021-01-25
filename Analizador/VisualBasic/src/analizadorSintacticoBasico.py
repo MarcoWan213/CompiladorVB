@@ -7,51 +7,36 @@ from sys import stdin
 
 precedence = (	
 	('right','ID','MODULE', 'IMPORTS'),
-	#('right','PROCEDURE'),
-	#('right','VAR'),
 	('right','IGUAL'),
-	('right','UPDATE'),
-    #('right','ARGS'),
+	('right','UPDATE'),    
 	('right','NUMERO'),
 	('left','NOIGUAL'),
 	('left','MENORQ','MAYORQ'),
 	('left','SUMA','RESTA'),
-	('left','MULTI','DIV'),
-	#('right','ODD'),
+	('left','MULTI','DIV'),	
 	('right','PUNTO'),
 	('left','PIZQ','PDER'),
-	('left','LLIZQ','LLDER'),
-	#'a','x','SUMA','RESTA','DIV','MULTI','MENORQ','MAYORQ','IGUAL','NOIGUAL',
-	#'PIZQ','PDER','LLIZQ','LLDER','PUNTO','UPDATE'
+	('left','LLIZQ','LLDER'),	
 	)
 
 def p_module(p):
-	'module : program'
-	#'module : imports MODULE PROGRAM constDecl varDecl procDecl statement'	
+	'module : program'	
 	print ("Module")
 
 def p_program(p):
-	'program : constDecl varDecl procDecl statement'
-	#'program : SUB MAIN PIZQ ARGS AS STRING PIZQ PDER PDER'
+	'program : constDecl varDecl procDecl statement'	
 	print ("Program")
 
 def p_args(p):
     'args : ARGS'
 
 def p_imports(p):	
-	'imports : IMPORTS ID'
-	#"(" ident ")"    
-	#'''block : constDecl varDecl procDecl statement'''
+	'imports : IMPORTS ID'	
 	print ("imporsss")
 
-#def p_main(p):
-	
-#Sub Main(args As String())
 
 def p_constDecl(p):
 	'''constDecl : DIM constAssignmentList'''
-	#p[0] = constDecl(p[2])
-	#print "constDecl"
 	print ("Conts")
 
 def p_constDecl1(p):
